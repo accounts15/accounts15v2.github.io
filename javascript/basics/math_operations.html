@@ -97,14 +97,15 @@
     let btnDiv = document.getElementById("btn-div");
     btnDiv.addEventListener('click', function() {
         //string
-        let FirstNumber = document.getElementById("num-first-number").value;
+        let UnangNumber = document.getElementById("num-first-number");
+        let FirstNumber = UnangNumber.value;
         let SecondNumber = document.getElementById("num-second-number").value;
 
         let total = parseInt(FirstNumber) / parseInt(SecondNumber);
 
         document.getElementById("num-total").value = total;
 
-        // document.getElementById("num-first-number").value = "";
+        UnangNumber.value = "";
         // document.getElementById("num-second-number").value = "";
 
         // document.getElementById("num-first-number").focus();
