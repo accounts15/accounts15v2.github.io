@@ -22,12 +22,17 @@
                         <label for="">Second Number:</label>
                         <input type="number" id="num-second-number" class="form-control form-control-sm" placeholder="Enter second number">
                     </div>
+
+                    <div class="mb-3">
+                        <label for="">Total:</label>
+                        <input type="number" id="num-total" class="form-control form-control-sm" placeholder="0.00">
+                    </div>
                     
                     <div class="mb-3">
                         <button class="btn btn-success" id="btn-add">Addition</button>
-                        <button class="btn btn-danger">Subtraction</button>
-                        <button class="btn btn-info text-white">Multiplication</button>
-                        <button class="btn btn-warning text-white">Division</button>
+                        <button class="btn btn-danger" id="btn-sub">Subtraction</button>
+                        <button class="btn btn-info text-white"  id="btn-mul">Multiplication</button>
+                        <button class="btn btn-warning text-white"  id="btn-div">Division</button>
                     </div>
             </div>
             <div class="col-md-4"></div>
@@ -42,10 +47,68 @@
     let btnAdd = document.getElementById("btn-add");
 
     btnAdd.addEventListener('click', function() {
-        let FirstNumber = document.getElementById("num-first-number");
-        let SecondNumber = document.getElementById("num-second-number");
+        //string
+        let FirstNumber = document.getElementById("num-first-number").value;
+        let SecondNumber = document.getElementById("num-second-number").value;
+        let total = parseInt(FirstNumber) + parseInt(SecondNumber);
 
-        console.log(SecondNumber);
+        document.getElementById("num-total").value = total;
+
+        // document.getElementById("num-first-number").value = "";
+        // document.getElementById("num-second-number").value = "";
+
+        // document.getElementById("num-first-number").focus();
+        
+    });
+
+    let btnSub = document.getElementById("btn-sub");
+    btnSub.addEventListener('click', function() {
+        //string
+        let FirstNumber = document.getElementById("num-first-number").value;
+        let SecondNumber = document.getElementById("num-second-number").value;
+        let total = parseInt(FirstNumber) - parseInt(SecondNumber);
+
+        document.getElementById("num-total").value = total;
+
+        // document.getElementById("num-first-number").value = "";
+        // document.getElementById("num-second-number").value = "";
+
+        // document.getElementById("num-first-number").focus();
+        
+    });
+
+    let btnMul = document.getElementById("btn-mul");
+    btnMul.addEventListener('click', function() {
+        //string
+        let FirstNumber = document.getElementById("num-first-number").value;
+        let SecondNumber = document.getElementById("num-second-number").value;
+
+        let total = parseInt(FirstNumber) * parseInt(SecondNumber);
+
+        document.getElementById("num-total").value = total;
+
+        // document.getElementById("num-first-number").value = "";
+        // document.getElementById("num-second-number").value = "";
+
+        // document.getElementById("num-first-number").focus();
+        
+    });
+
+    let btnDiv = document.getElementById("btn-div");
+    btnDiv.addEventListener('click', function() {
+        //string
+        let FirstNumber = document.getElementById("num-first-number").value;
+        let SecondNumber = document.getElementById("num-second-number").value;
+
+        let total = parseInt(FirstNumber) / parseInt(SecondNumber);
+
+        document.getElementById("num-total").value = total;
+
+        // document.getElementById("num-first-number").value = "";
+        // document.getElementById("num-second-number").value = "";
+
+        // document.getElementById("num-first-number").focus();
+        
     });
 
 
