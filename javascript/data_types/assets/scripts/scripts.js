@@ -8,8 +8,6 @@ let Married = true;
 
 // string functions
 
-
-
 //Upper Case
 let btnUpperCase = document.getElementById("btn-upper-case");
 btnUpperCase.addEventListener('click', function() {
@@ -53,5 +51,15 @@ btnConcat.addEventListener('click', function() {
      
     document.getElementById("h1-output").innerText = "Welcome back, " + FullName;
     console.log(Output);
+});
+
+//Get selected letters
+let btnSubstring = document.getElementById("btn-substring");
+btnSubstring.addEventListener('click', function() {
+    let FullName = document.getElementById("txt-fullname").value;
+
+    let Substring = FullName.substring(0, (FullName.length - 1));
+    document.getElementById("txt-fullname").value = Substring;
+    document.getElementById("h1-output").innerText = Substring;
 });
 
