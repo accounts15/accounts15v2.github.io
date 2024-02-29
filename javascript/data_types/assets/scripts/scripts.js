@@ -63,3 +63,7 @@ btnSubstring.addEventListener('click', function() {
     document.getElementById("h1-output").innerText = Substring;
 });
 
+
+let total = 5 + 69 - 1;
+
+console.log("Total => " + total);
