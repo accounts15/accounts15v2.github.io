@@ -9,18 +9,17 @@
 
 //kung ang Age ay mas mababa sa AdultAge
 let AdultAge = 18;
-let Age = 15;
+let Age = 21;
+let PersonType = "";
 
-if (Age >= AdultAge) 
-{
-    //mag log ng "Minor"
-    // console.log("Minor");
-}
-else
-{
-    //mag log ng "Adult"
-    // console.log("Adult");
-}
+PersonType = (Age >= AdultAge) ? "Adult" : "Minor";
+
+// if (Age >= AdultAge) 
+//     PersonType = "Adult";
+// else
+//     PersonType = "Minor";
+
+console.log(PersonType);
 
 //Grading System
 // 1,2,3,5
