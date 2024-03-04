@@ -79,3 +79,12 @@ else
 }
 
 console.log(Total);
+
+
+let isMarried = "true";
+let NewAge = "32";
+
+if (NewAge === 32)
+    console.log("Wala na sa kalendaryo");
+else 
+    console.log("Bata pa");

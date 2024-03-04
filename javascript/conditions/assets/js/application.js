@@ -10,14 +10,34 @@ document.getElementById("btn-calculate").addEventListener('click', function() {
     else if (Operation == "")
         alert("Invalid Operation");
     else {
-        if (Operation == "add") 
-            Total = parseFloat(FirstNum) + parseFloat(SecondNum);
-        else if (Operation == "sub")
-            Total = parseFloat(FirstNum) - parseFloat(SecondNum);
-        else if (Operation == "mul")
-            Total = parseFloat(FirstNum) * parseFloat(SecondNum);
-        else if (Operation == "div")
-            Total = parseFloat(FirstNum) / parseFloat(SecondNum);
+
+        switch(Operation)
+        {
+            case "add":
+                Total = parseFloat(FirstNum) + parseFloat(SecondNum);
+                break;
+            case "sub":
+                Total = parseFloat(FirstNum) - parseFloat(SecondNum);
+                break;
+            case "mul":
+                Total = parseFloat(FirstNum) * parseFloat(SecondNum);
+                break;
+            case "div":
+                Total = parseFloat(FirstNum) / parseFloat(SecondNum);
+                break;
+            default:
+                break;
+        }
+
+        // //If ELSE
+        // if (Operation == "add") 
+        //     Total = parseFloat(FirstNum) + parseFloat(SecondNum);
+        // else if (Operation == "sub")
+        //     Total = parseFloat(FirstNum) - parseFloat(SecondNum);
+        // else if (Operation == "mul")
+        //     Total = parseFloat(FirstNum) * parseFloat(SecondNum);
+        // else if (Operation == "div")
+        //     Total = parseFloat(FirstNum) / parseFloat(SecondNum);
     }
 
     document.getElementById("num-total").value = Total;
