@@ -50,8 +50,6 @@ else
 }
 
 // console.log("Transmuted Grade : " + TransmutedGrade);
-
-
 let Operation = "add";
 let FirstNum = 10;
 let SecondNum = 5;
@@ -79,7 +77,6 @@ else
 }
 
 console.log(Total);
-
 
 let isMarried = true;
 let NewAge = "32";
