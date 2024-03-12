@@ -13,7 +13,7 @@ Execute.addEventListener('click', function() {
 
 
 let Options  = "";
-for(var opts = 1; opts <= 1000; opts++) {
+for(var opts = 1; opts <= 10; opts++) {
     Options  += "<option value='"+ opts +"'>" + opts +"</option>";
 }
 
