@@ -29,10 +29,10 @@
                     </div>
                     
                     <div class="mb-3">
-                        <button class="btn btn-success" id="btn-add">Addition</button>
-                        <button class="btn btn-danger" id="btn-sub">Subtraction</button>
-                        <button class="btn btn-info text-white"  id="btn-mul">Multiplication</button>
-                        <button class="btn btn-warning text-white"  id="btn-div">Division</button>
+                        <button class="btn btn-success" onclick="Compute('add');">Addition</button>
+                        <button class="btn btn-danger" onclick="Compute('sub');">Subtraction</button>
+                        <button class="btn btn-info text-white" onclick="Compute('mul');">Multiplication</button>
+                        <button class="btn btn-warning text-white" onclick="Compute('div');">Division</button>
                     </div>
             </div>
             <div class="col-md-4"></div>
@@ -41,95 +41,21 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
-    // Javascript codes
-    // DOM
 
-    let btnAdd = document.getElementById("btn-add");
+    function Compute(Operation) {
+        let FirstNum = document.getElementById("num-first-number").value;
+        let SecondNum = document.getElementById("num-second-number").value;
+        let total = 0;
 
-    btnAdd.addEventListener('click', function() {
-        //string
-        let FirstNumber = document.getElementById("num-first-number").value;
-        let SecondNumber = document.getElementById("num-second-number").value;
-        let total = parseInt(FirstNumber) + parseInt(SecondNumber);
+        if (Operation == "add")
+            total = parseFloat(FirstNum) + parseFloat(SecondNum);
+        else if (Operation == "sub")
+            total = parseFloat(FirstNum) - parseFloat(SecondNum);
+        else if (Operation == "mul")
+            total = parseFloat(FirstNum) * parseFloat(SecondNum);
+        else if (Operation == "div")
+            total = parseFloat(FirstNum) / parseFloat(SecondNum);
 
-        document.getElementById("num-total").value = total;
-
-        // document.getElementById("num-first-number").value = "";
-        // document.getElementById("num-second-number").value = "";
-
-        // document.getElementById("num-first-number").focus();
-        
-    });
-
-    let btnSub = document.getElementById("btn-sub");
-    btnSub.addEventListener('click', function() {
-        //string
-        let FirstNumber = document.getElementById("num-first-number").value;
-        let SecondNumber = document.getElementById("num-second-number").value;
-        let total = parseInt(FirstNumber) - parseInt(SecondNumber);
-
-        document.getElementById("num-total").value = total;
-
-        // document.getElementById("num-first-number").value = "";
-        // document.getElementById("num-second-number").value = "";
-
-        // document.getElementById("num-first-number").focus();
-        
-    });
-
-    let btnMul = document.getElementById("btn-mul");
-    btnMul.addEventListener('click', function() {
-        //string
-        let FirstNumber = document.getElementById("num-first-number").value;
-        let SecondNumber = document.getElementById("num-second-number").value;
-
-        let total = parseInt(FirstNumber) * parseInt(SecondNumber);
-
-        document.getElementById("num-total").value = total;
-
-        // document.getElementById("num-first-number").value = "";
-        // document.getElementById("num-second-number").value = "";
-
-        // document.getElementById("num-first-number").focus();
-        
-    });
-
-    let btnDiv = document.getElementById("btn-div");
-    btnDiv.addEventListener('click', function() {
-        //string
-        let UnangNumber = document.getElementById("num-first-number");
-        let FirstNumber = UnangNumber.value;
-        let SecondNumber = document.getElementById("num-second-number").value;
-
-        let total = parseInt(FirstNumber) / parseInt(SecondNumber);
-
-        document.getElementById("num-total").value = total;
-
-        UnangNumber.value = "";
-        // document.getElementById("num-second-number").value = "";
-
-        // document.getElementById("num-first-number").focus();
-        
-    });
-
-
-
-
-    // VARIABLES
-    //TYPE NAME = VALUE
-    // let AvailableLollipops = 10;
-    // var MinimumLollipopToSold = 2;
-
-    // AvailableLollipops = 14;
-
-    // const RemainingLollipops = 10;
-    
-    // var - can redeclare and can reassign
-    // let - cannot redeclare but can reassign
-    // const - cannot redeclare and cannot reassign
-
-    // RemainingLollipops = AvailableLollipops + MinimumLollipopToSold;
-
-    // console.log(RemainingLollipops);
-
+        document.getElementById('num-total').value = total;
+    }
 </script>
