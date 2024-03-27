@@ -44,35 +44,45 @@ function ToDisplay( {firstName, lastName, age, isMarried, skills, addresses, sta
     // console.log(obj.status());
 }
 
-var objStudents = [
-    {
-        name: "John Dela Cruz",
-        age: 24,
-    },
-    {
-        name: "Jessica Velasquez",
-        age: 21,
-    },
-    {
-        name: "Bhen Morales",
-        age: 26,
-    },
-    {
-        name: "Elaiza Mae Sienes",
-        age: 16,
-    },
-    {
-        name: "Jeffrey Alarcon",
-        age: 19,
-    },
-];
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+        if (xhr.status == 200)
+        {
+            var objStudents = JSON.parse(xhr.responseText);
+            objStudents.push({
+                name: "Jesthony Morales",
+                age: 34
+            });
 
-for (const student of objStudents) {
-    ShowStudent(student);
+            // for (const student of objStudents) {
+            //     ShowStudent(student);
+            // }
+        }
+    }
 }
+
+xhr.open("GET", "assets/files/students.json");
+xhr.send();
+
 
 function ShowStudent({name, age}) {
     console.log(name);
     console.log(age);
     console.log("********************************\n\n");
 }
+
+
+let xhrDoctors = new XMLHttpRequest();
+xhrDoctors.onreadystatechange = function() {
+    if (xhrDoctors.readyState == 4) {
+        if (xhrDoctors.status == 200)
+        {
+            var objDoctors = JSON.parse(xhrDoctors.responseText);
+            console.log(objDoctors);
+        }
+    }
+}
+
+xhrDoctors.open("GET", "https://api.mydrsappt.com/api/v1/doctors");
+xhrDoctors.send();
