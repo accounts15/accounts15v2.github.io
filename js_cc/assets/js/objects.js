@@ -74,15 +74,19 @@ function ShowStudent({name, age}) {
 
 
 let xhrDoctors = new XMLHttpRequest();
-xhrDoctors.onreadystatechange = function() {
-    if (xhrDoctors.readyState == 4) {
-        if (xhrDoctors.status == 200)
-        {
-            var objDoctors = JSON.parse(xhrDoctors.responseText);
-            console.log(objDoctors);
-        }
-    }
-}
+xhrDoctors.addEventListener("load", function(event) {
+    var objDoctors = JSON.parse(event.srcElement.responseText);
+    console.log(objDoctors);
+});
+// xhrDoctors.onreadystatechange = function() {
+//     if (xhrDoctors.readyState == 4) {
+//         if (xhrDoctors.status == 200)
+//         {
+//             var objDoctors = JSON.parse(xhrDoctors.responseText);
+//             console.log(objDoctors);
+//         }
+//     }
+// }
 
 xhrDoctors.open("GET", "https://api.mydrsappt.com/api/v1/doctors");
 xhrDoctors.send();
