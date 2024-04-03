@@ -13,7 +13,7 @@
   />
 </head>
 <body>
-    <header>
+     <header>
         <nav class="navbar navbar-dark bg-dark">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">jQuery</a>
@@ -22,12 +22,11 @@
     </header>
     <main class="container mt-5">
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button data-trigger="delete" type="button" class="btn btn-danger">Delete</button>
-            <button data-trigger="edit" type="button" class="btn btn-warning">Edit</button>
-            <button data-trigger="add" type="button" class="btn btn-success">Add</button>
+            <button id="btn1" data-trigger="delete" type="button" class="btn btn-danger">Delete</button>
+            <button id="btn2" data-trigger="edit" type="button" class="btn btn-warning">Edit</button>
+            <button id="btn3" data-trigger="add" type="button" class="btn btn-success">Add</button>
         </div>
-        <div class="row">
-            <div class="col-md-12" id="div-data"></div>
+        <div class="row" id="div-data">
         </div>
     </main>
     <script
@@ -43,6 +42,7 @@
     </script>
 
     <!-- <script src="assets/js/scripts.js"></script> -->
+    <!-- <script src="assets/js/fat.js"></script> -->
     <script src="assets/js/map.js"></script>
 </body>
 </html>
