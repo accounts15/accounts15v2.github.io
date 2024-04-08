@@ -35,8 +35,6 @@ class Student {
     }
 }
 
-let PhoneNum = "11234455";
-
 const student1 = new Student("Jesthony Morales", 34, "WD99P", "Hooray");
 const student2 = new Student("Jevon Mati Morales", 1, "WD100P", "Hello");
 const student3 = new Student("Vina Morales", 45, "WD001P", "Hi");
